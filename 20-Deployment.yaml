@@ -1,0 +1,26 @@
+apiversion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  # these are replica set labels20-Deployment.yaml
+  
+  labels:
+    purpose: deploy-demo
+    project: roboshop
+  spec:
+    replicas: 3
+    selector:
+    # these labels are used to select pods
+      matchlabels:
+        purpose: deploy-demo
+        project: roboshop
+        # pod definitn
+    template:
+      metadata:
+        labels:
+          purpose: deploy-demo
+          project: roboshop
+      spec:
+        containers:
+        - name: nginx
+          image: nginx

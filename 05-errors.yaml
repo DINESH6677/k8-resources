@@ -1,0 +1,10 @@
+apiversion: v1
+kind: pod
+metadata:
+  name: error-test
+spec:
+  containers:
+    # - name: nginx
+    #   image: nginxxxx
+    - name: almalinux
+      image: almalinux:9
